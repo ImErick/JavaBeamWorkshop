@@ -17,7 +17,7 @@ public class InMemoryExample {
         se convierte el DF de CustomerEntity a un DF de Strings
         */
         PCollection<String> customerDataSet = pList.apply(
-                MapElements
+                MapElements // esto tambien sirve de ejemplo para el MapElements con TypeDescriptors de la clase #9
                         .into(TypeDescriptors.strings())
                         .via(CustomerEntity::getName)); // TODO: ojala responda como se hace para ID y NAME
 
