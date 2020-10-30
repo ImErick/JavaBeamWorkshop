@@ -16,7 +16,7 @@ public class SQLExample {
             .addStringField("userId")
             .addStringField("orderId")
             .addStringField("productId")
-            .addStringField("Amount")
+            .addDoubleField("Amount")
             .build();
 
     public static void main(String[] args) {
