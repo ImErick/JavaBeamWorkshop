@@ -25,7 +25,7 @@ public class SQLExample {
 
         // convertiendo strings to rows
         PCollection<Row> rows = input.apply(ParDo.of(new StringToRow())).setRowSchema(schema);
-        // sql
+        // sql "SELECT userId, Count(userId) FROM PCOLLECTION GROUP BY userId" -- count query
         PCollection<Row> sqlResult = rows.apply(SqlTransform.query("SELECT * FROM PCOLLECTION"));
         // regresar rows a strings
         PCollection<String> finalOutput = sqlResult.apply(ParDo.of(new RowToString()));
